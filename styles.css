@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    width:100vw;
+    height:100vh;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg,#112d4e 0%,#3f72af 100%);
+}
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+.tab-container{
+    display:flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 550px;
+    margin: 4rem auto;
+}
+.tab{
+    letter-spacing: 2px;
+    color: var(--colorLight2);
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding: 5px 8px;
+}
+.tab.current-tab{
+    background-color: rgba(219,226,239,0.5);
+    border-radius:4px; 
+}
+.weather-container{
+    margin-block: 4rem;
+}
+.btn{
+    all:unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-bottom:10px;
+}
+.grant-location-container{
+display:none;
+}
+.grant-location-container.active{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grant-location-container h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.grant-location-container p{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+.loading-screen-container{
+    display:none;
+}
+.loading-screen-container p{
+    text-transform: uppercase;
+    margin-top: 2rem;
+    text-align: center;
+}
+.loading-screen-container.active{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-info-container{
+display:none;
+}
+.user-info-container.active{
+  display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.name{
+    display:flex;
+    align-items:center;
+    gap:0 0.5rem;
+    margin-bottom: 1rem;
+}
+.name>p{
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+.name>img{
+    width:20px;
+    height:20px;
+}
+.user-info-container p[data-weatherDescription]{
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.user-info-container img[data-weatherIcon]{
+    width: 90px;
+    height: 90px;
+}
+.user-info-container p[data-temparature]{
+   font-size: 2rem;
+   font-weight: 800; 
+}
+.paramter-container{
+    display:flex;
+    gap: 10px 20px;
+    width:90%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.parameter{
+    width:30%;
+    max-width: 200px;
+    background-color: rgba(219,226,239,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1rem;
+    gap: 5px 0;
+}
+.parameter img{ 
+   width: 50px;
+   height: 50px;
+}
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.parameter p:last-of-type(){
+    font-size: 1rem;
+    font-weight: 600;
+}
+.form-container{
+   display:none;
+   width: 90%;
+   max-width: 550px;
+   margin: 0 auto;
+   align-items: center;
+   justify-content: center;
+   gap: 0 10px;
+   margin-bottom: 3rem;
+}
+.form-container.active{
+    display:flex;
+}
+.form-container input{
+    all: unset;
+    width: calc(100% - 80px);
+    height:20px;
+    border-radius: 10px;
+    padding: 0.6rem;
+    background-color: rgba(219,226,239,0.5);
+    color: var(--colorLight2);
+    cursor:text
+}
+.form-container input::placeholder{
+    color: var(--colorLight2);
+}
+.form-container input:focus{
+    outline: 3px solid rgba(225,255,255,0.7);
+}
+.form-container button{
+    margin:unset;
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+.weather-container [data-error]{
+    display: none;
+}
+.weather-container  .active[data-error]{
+    display:block;
+    margin:0 auto;
+}
